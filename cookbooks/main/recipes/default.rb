@@ -103,11 +103,11 @@ include_recipe "redis"
 # include_recipe "jenkins"
 
 #enable Extension modules for a given Postgresql database
-# if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
+if ['solo','db_master', 'db_slave'].include?(node[:instance_role])
   # Extensions that support both Postgres 9.0, 9.1 and 9.2
   # postgresql9_autoexplain "dbname"
-  postgresql9_btree_gin "sp_production"
-  postgresql9_btree_gist "sp_production"
+  postgresql9_btree_gin "stewardshippro"
+  postgresql9_btree_gist "stewardshippro"
   # postgresql9_chkpass "dbname"
   # postgresql9_citext "dbname"
   # postgresql9_cube "dbname"
@@ -116,7 +116,7 @@ include_recipe "redis"
   # postgresql9_dict_xsyn "dbname"
   # postgresql9_earthdistance "dbname"
   # postgresql9_fuzzystrmatch "dbname"
-  postgresql9_hstore "sp_production"
+  postgresql9_hstore "stewardshippro"
   # postgresql9_intarray "dbname"
   # postgresql9_isn "dbname"
   # postgresql9_lo "dbname"
@@ -148,4 +148,4 @@ include_recipe "redis"
   #Admin-Level Contribs
   # postgresql9_pg_buffercache "postgres"
   # postgresql9_pg_freespacemap "postgres"
-#end
+end
